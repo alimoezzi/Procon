@@ -11,3 +11,11 @@ defmodule Procon.Application do
       # Starts a worker by calling: Procon.Worker.start_link(arg)
       # {Procon.Worker, arg}
       {Procon.Producer, []},
+    ]
+
+    # See https://hexdocs.pm/elixir/Supervisor.html
+    # for other strategies and supported options
+    opts = [strategy: :one_for_one, name: Procon.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+end
