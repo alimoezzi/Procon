@@ -1,6 +1,8 @@
 # Procon
 
-**TODO: Add description**
+This is Producer-Consumer problem solution in `elixir` .
+
+It is design so that it support distributed nodes through `erlang`  
 
 ## Installation
 
