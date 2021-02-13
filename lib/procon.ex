@@ -35,3 +35,15 @@ defmodule Procon.Producer do
     {:noreply, state ++ Enum.to_list(50..(2 * 50 + 1))}
   end
 end
+
+defmodule Procon.Consumer do
+  def start do
+    spawn(loop())
+  end
+
+  def loop do
+    IO.puts("Consumer #{inspect(self())} consumes #{Procon.Producer.get()}")
+    Process.sleep(1000)
+    loop()
+  end
+end
