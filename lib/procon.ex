@@ -20,6 +20,12 @@ defmodule Procon.Producer do
     [h | t] = state
     {:reply, h, t}
   end
+
+  def handle_call(:get, _from, _state) do
+    # {:atom, oldstate, newstate}
+    {:reply, :none, []}
+  end
+
   def handle_cast(:produce, state) do
     spawn(fn -> Process.sleep(@delay) && GenServer.cast({:global, :producer}, :produce) end)
     {:noreply, state ++ Enum.to_list(50..(2 * 50 + 1))}
