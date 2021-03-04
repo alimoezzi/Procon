@@ -1,4 +1,4 @@
-# Procon
+# Procon [![HitCount](http://hits.dwyl.com/realsarm/Procon.svg)](http://hits.dwyl.com/realsarm/Procon)
 
 This is Producer-Consumer problem solution in `elixir` .
 
